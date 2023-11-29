@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+message WorkbenchReport {
+  repeated string dimensions = 1;
+  repeated string metrics = 2;
+  string date = 3;
+  repeated WorkbenchReport detail = 4;
+}

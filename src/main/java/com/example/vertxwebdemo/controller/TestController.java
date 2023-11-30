@@ -8,8 +8,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.io.*;
-import java.nio.charset.Charset;
-import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -96,7 +94,7 @@ public class TestController {
     @GetMapping("/api/test2")
     public void readProto() throws Exception {
         long start = System.currentTimeMillis();
-        FileInputStream inputStream = new FileInputStream("t1.long");
+        FileInputStream inputStream = new FileInputStream("t1.log");
         List<WorkbenchReport> reports = new ArrayList<>();
         WorkbenchReportOuterClass.WorkbenchReport report;
         while ((report = WorkbenchReportOuterClass.WorkbenchReport.parseDelimitedFrom(inputStream)) != null) {

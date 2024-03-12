@@ -37,6 +37,13 @@ public class MyService extends AbstractVerticle implements ApplicationRunner {
             // 写入响应并结束处理
             response.end(execute);
         });
+
+        router.route(HttpMethod.GET, "/api/test/1").handler(ctx -> {
+            HttpServerResponse response = ctx.response();
+            response.putHeader("content-type", "text/plain");
+
+            response.end("Hello World from Vert.x-Web!");
+        });
     }
 
     @Override

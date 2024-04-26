@@ -1,4 +1,4 @@
-FROM sswfly/ubuntu-jdk11-maven:v3
+FROM sswfly/ubuntu-jdk11:v3
 RUN mkdir -p /opt/app
 ADD target/vertx-web-demo-0.0.1-SNAPSHOT.jar /opt/app/vertx-web-demo-0.0.1-SNAPSHOT.jar
 ENV TZ=Asia/Shanghai
